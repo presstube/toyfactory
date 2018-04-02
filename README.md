@@ -1,9 +1,4 @@
-threejs-starter-kit
-===================
-
-My current worlflow for quick THREE.js prototypes.
-
-![screenshot](/screenshot.png)
+from: threejs-starter-kit
 
 ## Usage
 After cloning install all node dependencies
@@ -14,7 +9,11 @@ npm i
 Then launch the main task to open budo livereload server  
 ```bash
 npm start
-```
+
+
+Using the mic requires SSL so you'll have to use:
+```bash
+budo src/index.js --ssl --live --cors -- -t babelify
 
 You are good to go !
 
