@@ -55,6 +55,8 @@ const scene = new Scene()
 const camera = new PerspectiveCamera(50, resize.width / resize.height, 0.1, 1000)
 const controls = new OrbitControls(camera, {element: renderer.domElement, parent: renderer.domElement, distance: 10, phi: Math.PI * 0.5})
 
+
+
 /* Lights */
 const frontLight = new PointLight(0xFFFFFF, 1)
 const backLight = new PointLight(0xFFFFFF, 1)
@@ -195,6 +197,9 @@ function onResize () {
   Render loop
 */
 function render (dt) {
+
+  camera.rotation.z = 0
+
   if (!SETTINGS.frozen) {
     _.each(segments, (seg) => {
       // const wiggleFactor = 0.01

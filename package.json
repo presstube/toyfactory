@@ -6,6 +6,7 @@
   "repository": "",
   "scripts": {
     "start": "budo src/index.js --open --live -- -t babelify -t glslify",
+    "https": "budo src/index.js --ssl --live --cors -- -t babelify",
     "build": "browserify src/index.js -t babelify -t glslify -p tinyify > dist/index.js"
   },
   "devDependencies": {
