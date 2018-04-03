@@ -28,7 +28,7 @@ const gui = new dat.GUI();
 
 /* Custom settings */
 const SETTINGS = {
-  useComposer: true,
+  useComposer: false,
   frozen: false,
   wiggleFactor: 0.01,
   useMic: true,
@@ -53,7 +53,8 @@ const fxaaPass = new FXAAPass()
 const scene = new Scene()
 // scene.position.set(0, -2, 0)
 const camera = new PerspectiveCamera(50, resize.width / resize.height, 0.1, 1000)
-const controls = new OrbitControls(camera, {element: renderer.domElement, parent: renderer.domElement, distance: 10, phi: Math.PI * 0.5})
+camera.position.set(0,2,10)
+// const controls = new OrbitControls(camera, {element: renderer.domElement, parent: renderer.domElement, distance: 10, phi: Math.PI * 0.5})
 
 
 
@@ -245,7 +246,7 @@ function render (dt) {
     })
   }
   base.rotateZ(0.01)
-  controls.update()
+  // controls.update()
   if (SETTINGS.useComposer) {
     composer.reset()
     composer.render(scene, camera)
